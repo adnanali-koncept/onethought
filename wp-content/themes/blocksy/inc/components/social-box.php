@@ -902,6 +902,8 @@ function blocksy_get_social_metadata($args = []) {
 			$args['social'] === 'email'
 			&&
 			strpos($single_metadata['url'], 'mailto:') === false
+			&&
+			strpos($single_metadata['url'], '@') !== false
 		) {
 			$single_metadata['url'] = 'mailto:' . $single_metadata['url'];
 		}

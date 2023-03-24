@@ -352,7 +352,7 @@ if (! function_exists('blocksy_get_image_element')) {
 			}
 		}
 
-		$output = $image . $output;
+		$output = $output . $image;
 
 		return $output;
 	}

@@ -1,3 +1,32 @@
+1.8.79: 2023-03-16
+- Improvement: Add class option for logo element
+- Improvement: WooCommerce my account page buttons spacing
+- Improvement: Add sponsored attribute option to header button
+- Fix: Cart table `th` alignment issue in Safari 15
+- Fix: Header ghost button element height issue
+
+1.8.78: 2023-03-09
+- Improvement: WooCommerce custom quantity input minor CSS improvements
+- Improvement: Better integration with Delicious Recipes plugin
+- Improvement: Better extract meta-box options for blog page
+- Improvement: Add `blocksy:hero:type-2:image:attachment_id` filter
+- Fix: Cart table multiply symbol spacing
+
+1.8.77: 2023-03-02
+- Improvement: Integration between Woocommerce Product Table and quantity inputs
+- Improvement: Social networks smarter email links insertion
+- Improvement: Smarter container selector for infinite scroll
+- Improvement: Header menu small accessibility improvement
+- Fix: Small CSS conflict with Elementor cart page module
+
+1.8.76: 2023-02-23
+- Improvement: Hide Card Inner Spacing option for Simple archive card types
+- Improvement: Hide Vertical Alignment option for Simple and Boxed archive card types
+- Improvement: Ensure broken style tags dont affect Blocksy styles in Gutenberg
+- Improvement: Proper check for related and upsells products
+- Improvement: Dont create post meta fields unnecessarily for empty posts
+- Fix: Don't show hidden products in search live results
+
 1.8.75: 2023-02-15
 - Improvement: Correctly close handler for overlays
 

@@ -89,15 +89,20 @@ if (! function_exists('blocksy_entry_excerpt')) {
 			the_content(
 				sprintf(
 					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blocksy' ),
+						/* translators: 1: span open 2: Name of current post. Only visible to screen readers 3: span closing */
+						__(
+							'Continue reading%1$s "%2$s"%3$s',
+							'blocksy'
+						),
 						array(
 							'span' => array(
 								'class' => array(),
 							),
 						)
 					),
-					get_the_title()
+					'<span class="screen-reader-text">',
+					get_the_title(),
+					'</span>'
 				)
 			);
 			$excerpt = ob_get_clean();

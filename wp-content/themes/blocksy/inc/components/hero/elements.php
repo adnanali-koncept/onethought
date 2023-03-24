@@ -186,14 +186,15 @@ foreach ($hero_elements as $index => $single_hero_element) {
 				}
 			} else {
 				$title = sprintf(
-					// translators: %s is the number of results
-					__( '<span>Search Results for</span> %s', 'blocksy' ),
+					// translators: 1: span opening 2: span closing 3: the number of results
+					__(
+						'%1$sSearch Results for%2$s %3$s',
+						'blocksy'
+					),
+					'<span>',
+					'</span>',
 					get_search_query()
 				);
-			}
-
-			if (!have_posts()) {
-				// $title = __('Nothing Found', 'blocksy');
 			}
 		}
 
@@ -319,15 +320,6 @@ foreach ($hero_elements as $index => $single_hero_element) {
 					if (! empty(trim(get_the_author_meta('description', blocksy_get_author_id())))) {
 						$description = '<div class="' . $description_class . '">' . wp_kses_post(get_the_author_meta('description', blocksy_get_author_id())) . '</div>';
 					}
-				}
-
-				if (empty($description) && ! have_posts()) {
-					$description = __(
-						"It seems we can't find what you're looking for. Perhaps searching can help.",
-						'blocksy'
-					);
-
-					$description = '<div class="' . $description_class . '">' . $description . '</div>';
 				}
 			} else {
 				$title = sprintf(

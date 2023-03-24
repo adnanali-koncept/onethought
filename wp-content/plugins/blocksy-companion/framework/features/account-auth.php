@@ -229,19 +229,23 @@ class AccountAuth {
 			if ($this->has_woo_register_flow()) {
 				$error_message = sprintf(
 					__(
-						'Your account was created successfully. Your login details have been sent to your email address. Please visit the <a href="%s" data-login="yes">login page</a>.',
+						/* translators: 1: link open 2: link close */
+						'Your account was created successfully. Your login details have been sent to your email address. Please visit the %1$slogin page%2$s.',
 						'blocksy-companion'
 					),
-					wp_login_url()
+					'<a href="' . wp_login_url() . '" data-login="yes">',
+					'</a>'
 				);
 
 				if ('yes' === get_option('woocommerce_registration_generate_password')) {
 					$error_message = sprintf(
+						/* translators: 1: link open 2: link close */
 						__(
-							'Your account was created successfully and a password has been sent to your email address. Please visit the <a href="%s" data-login="yes">login page</a>.',
+							'Your account was created successfully and a password has been sent to your email address. Please visit the %1$slogin page%2$s.',
 							'blocksy-companion'
 						),
-						wp_login_url()
+						'<a href="' . wp_login_url() . '" data-login="yes">',
+						'</a>'
 					);
 				}
 
@@ -250,9 +254,13 @@ class AccountAuth {
 				$errors->add(
 					'registered',
 					sprintf(
-						/* translators: %s: Link to the login page. */
-						__('Registration complete. Please check your email, then visit the <a href="%s" data-login="yes">login page</a>.'),
-						wp_login_url()
+						/* translators: 1: link open 2: link close */
+						__(
+							'Registration complete. Please check your email, then visit the %1$sslogin page%2$s.',
+							'blocksy-companion'
+						),
+						'<a href="' . wp_login_url() . '" data-login="yes">',
+						'</a>'
 					),
 					'message'
 				);

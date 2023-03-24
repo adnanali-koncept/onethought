@@ -433,6 +433,6 @@ class Blocksy_Header_Builder_Elements {
 			));
 		}
 
-		return '<div class="ct-product-actions">' . $product_quantity . '<span class="multiply-symbol">×</span>' . $product_price . '</div>';
+		return '<div class="ct-product-actions">' . $product_quantity . '<span class="ct-product-multiply-symbol">×</span>' . $product_price . '</div>';
 	}
 }

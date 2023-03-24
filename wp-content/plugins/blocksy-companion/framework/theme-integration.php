@@ -416,11 +416,15 @@ class ThemeIntegration {
 				$default_height = 100;
 				$default_width = 100;
 
-				$dimensions = $this->svg_dimensions(get_attached_file($attachment_id));
+				$maybe_file = get_attached_file($attachment_id);
 
-				if ($dimensions) {
-					$default_height = $dimensions['height'];
-					$default_width = $dimensions['width'];
+				if ($maybe_file) {
+					$dimensions = $this->svg_dimensions($maybe_file);
+
+					if ($dimensions) {
+						$default_height = $dimensions['height'];
+						$default_width = $dimensions['width'];
+					}
 				}
 
 				$image[2] = $default_height;
